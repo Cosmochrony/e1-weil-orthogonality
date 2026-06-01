@@ -319,10 +319,16 @@ of Lemma~\ref{lem:ortho} holds exactly over $\mathbb{Z}/q\mathbb{Z}$.
 
     \begin{proof}
       Direct substitution into~\eqref{eq:fp-conjugate} with $c_2=c_3=0$:
-      $A^{(q-c_1)} = -c_1b_1 = -(c_1b_1) = -A^{(c_1)}$.
-      The span of $\{\ue_A: A\in S_{c_1}(n)\}$ is the conjugate of
-      $\{\ue_{-A}: A\in S_{c_1}(n)\}$ (since $\overline{\ue_A} = \ue_{-A}$), so
-      $V^{(q-c_1)}_n = \overline{V^{(c_1)}_n}$.
+      $A^{(q-c_1)} = -c_1b_1 = -A^{(c_1)}$.
+      The complex conjugate of $\ue_A$ is $\overline{\ue_A} = \ue_{-A}$, since
+      componentwise $\overline{(\ue_A)_t} = \overline{e^{2\pi iAt/q}/\sqrt{q}}
+      = e^{-2\pi iAt/q}/\sqrt{q} = (\ue_{-A})_t$.
+      Taking complex conjugates of $V^{(c_1)}_n = \mathrm{span}\{\ue_A : A\in S_{c_1}(n)\}$
+      therefore gives
+      $\overline{V^{(c_1)}_n}
+      = \mathrm{span}\{\overline{\ue_A} : A\in S_{c_1}(n)\}
+      = \mathrm{span}\{\ue_{-A} : A\in S_{c_1}(n)\}
+      = V^{(q-c_1)}_n$.
     \end{proof}
 
     \begin{remark}[General blocks and the O17 identity]
@@ -336,8 +342,9 @@ The present Fourier analysis shows why: every admitted direction is a Fourier mo
 $\ue_A$, and the count depends only on how many distinct frequencies $A$ appear in
 the BFS, which is invariant under the sign-reflection $c_1\to q-c_1$ because
 multiplication by~$-1$ is a bijection on $\mathbb{Z}/q\mathbb{Z}$.
-The \emph{O17} identity $\delta_{q-c}=\delta_c$ is therefore a corollary of
-Theorem~\ref{thm:main}.
+The Fourier-mode reduction gives a transparent mechanism behind the O17
+counting identity, but the shellwise equality itself is imported from
+\emph{O17}~\cite{Beau2026a21}.
     \end{remark}
 
   \section{Flat Schmidt spectrum and \texorpdfstring{$\Sent = \log \rpair$}{S=log r}}
