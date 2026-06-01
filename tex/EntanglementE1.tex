@@ -50,11 +50,14 @@ of Conjugate Pairs}
     where $(b_1,b_2,b_3)$ are the $b$-components of the three path elements.
     Since distinct Fourier modes are orthogonal, any newly admitted fingerprint is already
     orthogonal to the current span, giving $w_j = \|w^{\mathrm{GS}}_j\|/\|v_j\| = 1$ exactly.
-    For the conjugate pair $\{c,q-c\}$ the two blocks produce sign-reflected frequency
-    sets, so their spans satisfy $V^{(q-c)}_n = \overline{V^{(c)}_n}$, deriving the purity
-    hypothesis of the companion paper.
+    For matched single-character blocks, the conjugate pair produces sign-reflected
+    frequency sets, so the paired Fourier supports are canonically identified and the
+    purity hypothesis of the companion paper is derived.
+    For general canonical blocks, the equal-count identity is recovered, while the
+    literal Schmidt pairing remains conditional on a canonical block identification.
     Combined, these results prove analytically that the Schmidt spectrum of the closed
-    conjugate pair is flat and the reduced entropy is $\Sent(n)=\log\rpair(n)$.
+    conjugate pair is flat on the residual support, and the reduced entropy is
+    $\Sent(n)=\log\rpair(n)$, where $\rpair(n)=R_\infty-R(n)$ is the residual rank.
   \end{abstract}
 
   \noindent\textbf{Keywords:}
@@ -269,11 +272,11 @@ of Conjugate Pairs}
     \end{proof}
 
     \begin{remark}[Numerical validation]
-      Theorem~\ref{thm:main} explains the numerical observation of the companion
-      paper~\cite{Beau2026ent}: $w_j=1.000\,000$ exactly for every admitted direction at
-      $q\in\{29,61,101,151\}$ and multiple generic blocks, with standard deviation zero.
-      The agreement is exact (not merely approximate) because the orthogonality
-      of Lemma~\ref{lem:ortho} holds exactly over $\mathbb{Z}/q\mathbb{Z}$.
+Theorem~\ref{thm:main} explains the numerical observation of the companion
+paper~\cite{Beau2026ent}: $w_j=1.000\,000$ exactly for every admitted direction at
+$q\in\{29,61,101,151\}$ and multiple generic blocks, with standard deviation zero.
+The agreement is exact (not merely approximate) because the orthogonality
+of Lemma~\ref{lem:ortho} holds exactly over $\mathbb{Z}/q\mathbb{Z}$.
     \end{remark}
 
   \section{The conjugate pair: matched blocks and sign-reflected frequencies}
@@ -323,18 +326,18 @@ of Conjugate Pairs}
     \end{proof}
 
     \begin{remark}[General blocks and the O17 identity]
-      For general blocks $(c_1,c_2,c_3)$ with $c_2,c_3\neq 0$, the frequency shift
-      $\Delta\neq 0$ and the sign-reflection is not exact.
-      However, the COUNTING identity $\sigma_{q-c}(n) = \sigma_c(n)$ established in
-      \emph{O17}~\cite{Beau2026a21} (Theorem~2.1 and Corollary~2.3) shows that the
-      two blocks admit the same number of independent directions at every shell, regardless
-      of the block parameters.
-      The present Fourier analysis shows why: every admitted direction is a Fourier mode
-      $\ue_A$, and the count depends only on how many distinct frequencies $A$ appear in
-      the BFS, which is invariant under the sign-reflection $c_1\to q-c_1$ because
-      multiplication by~$-1$ is a bijection on $\mathbb{Z}/q\mathbb{Z}$.
-      The \emph{O17} identity $\delta_{q-c}=\delta_c$ is therefore a corollary of
-      Theorem~\ref{thm:main}.
+For general blocks $(c_1,c_2,c_3)$ with $c_2,c_3\neq 0$, the frequency shift
+$\Delta\neq 0$ and the sign-reflection is not exact.
+However, the COUNTING identity $\sigma_{q-c}(n) = \sigma_c(n)$ established in
+\emph{O17}~\cite{Beau2026a21} (Theorem~2.1 and Corollary~2.3) shows that the
+two blocks admit the same number of independent directions at every shell, regardless
+of the block parameters.
+The present Fourier analysis shows why: every admitted direction is a Fourier mode
+$\ue_A$, and the count depends only on how many distinct frequencies $A$ appear in
+the BFS, which is invariant under the sign-reflection $c_1\to q-c_1$ because
+multiplication by~$-1$ is a bijection on $\mathbb{Z}/q\mathbb{Z}$.
+The \emph{O17} identity $\delta_{q-c}=\delta_c$ is therefore a corollary of
+Theorem~\ref{thm:main}.
     \end{remark}
 
   \section{Flat Schmidt spectrum and \texorpdfstring{$\Sent = \log \rpair$}{S=log r}}
@@ -342,59 +345,71 @@ of Conjugate Pairs}
 
     We now derive the companion paper's main result analytically.
 
-    \begin{theorem}[Flat Schmidt spectrum]
+    \begin{theorem}[Flat Schmidt spectrum on the residual support]
       \label{thm:flat}
       Let $\{c,q-c\}$ be a conjugate pair with matched blocks $(c,0,0)$ and $(q-c,0,0)$.
-      At BFS depth~$n$, let $S_c(n)\subset\mathbb{Z}/q\mathbb{Z}$ be the set of distinct
-      frequencies admitted so far, and let
+      Let $S_c(\infty)\subset\mathbb{Z}/q\mathbb{Z}$ be the full set of frequencies that
+      appear in the BFS orbit (with $|S_c(\infty)|=q$ at saturation).
+      At BFS depth~$n$, write $R(n):=|S_c(n)|$ for the admitted rank, and define
       \[
-        V^{(c)}_n
-        = \mathrm{span}\bigl\{\ue_A : A\in S_c(n)\bigr\},
+        S_c^{\mathrm{res}}(n)
+        := S_c(\infty)\setminus S_c(n),
         \qquad
-        V^{(q-c)}_n
-        = \mathrm{span}\bigl\{\ue_{-A} : A\in S_c(n)\bigr\}
-        = \overline{V^{(c)}_n}.
+        \rpair(n)
+        := |S_c^{\mathrm{res}}(n)| = R_\infty - R(n),
       \]
-      The bipartite fibre $K_{c}(n) = V^{(c)}_n\otimes V^{(q-c)}_n = V\otimes\overline{V}$
+      \begin{align*}
+        V^{(c)}_{\mathrm{res}}(n)
+        &:= \mathrm{span}\bigl\{\ue_A : A\in S_c^{\mathrm{res}}(n)\bigr\},\\
+        V^{(q-c)}_{\mathrm{res}}(n)
+        &:= \mathrm{span}\bigl\{\ue_{-A} : A\in S_c^{\mathrm{res}}(n)\bigr\}
+        = \overline{V^{(c)}_{\mathrm{res}}(n)}.
+      \end{align*}
+      Here $\rpair(n)$ coincides with the residual rank of the companion
+      paper~\cite{Beau2026ent}: $\rpair(n)=R_\infty-R(n)$, which is non-increasing.
+      The residual bipartite fibre
+      $K^{\mathrm{res}}_{c}(n) = V^{(c)}_{\mathrm{res}}(n)\otimes V^{(q-c)}_{\mathrm{res}}(n)$
       carries the maximally entangled state
       \[
-        |\Omega_n\rangle
-        = \frac{1}{\sqrt{r}}\sum_{A\in S_c(n)}|\ue_A\rangle\otimes|\ue_{-A}\rangle,
-        \qquad
-        r = |S_c(n)| = \rpair(n).
+        |\Omega^{\mathrm{res}}_n\rangle
+        = \frac{1}{\sqrt{\rpair(n)}}\sum_{A\in S_c^{\mathrm{res}}(n)}
+        |\ue_A\rangle\otimes|\ue_{-A}\rangle.
       \]
-      The Schmidt weights are all equal to $1/r$, so the reduced entropy is
+      The Schmidt weights are all equal to $1/\rpair(n)$, and the reduced entropy is
       \[
-        \Sent(n) = \log r = \log \rpair(n).
+        \Sent(n) = \log \rpair(n).
       \]
     \end{theorem}
 
     \begin{proof}
-      By Corollary~\ref{cor:ons}, the admitted basis of $V^{(c)}_n$ is the orthonormal set
-      $\{\ue_A : A\in S_c(n)\}$.
-      By Proposition~\ref{prop:conjugate} with $c_2=c_3=0$, the admitted basis of
-      $V^{(q-c)}_n$ is $\{\ue_{-A} : A\in S_c(n)\}$, which is the complex-conjugate basis.
-      The natural maximally entangled state on $V\otimes\overline{V}$ is
-      $|\Omega_n\rangle = r^{-1/2}\sum_A|\ue_A\rangle|\ue_{-A}\rangle$
-      (the standard ``identity'' state on an $r$-dimensional space and its conjugate).
-      The Schmidt decomposition of $|\Omega_n\rangle$ has $r$ terms with equal
-      coefficients $1/\sqrt{r}$, so the reduced density matrix of either factor is
-      $r^{-1}\,\mathbf{1}_r$ (flat spectrum).
-      The von Neumann entropy is $\Sent = -\mathrm{Tr}(r^{-1}\mathbf{1}_r\log r^{-1}\mathbf{1}_r)
-      = \log r = \log\rpair(n)$.
+      The residual modes $\{\ue_A : A\in S_c^{\mathrm{res}}(n)\}$ are orthonormal by
+      Lemma~\ref{lem:ortho} (distinct frequencies).
+      Proposition~\ref{prop:conjugate} with $c_2=c_3=0$ gives $S_{q-c}(n)=-S_c(n)$
+      (sign-reflection of the admitted sets), so the residual sets also satisfy
+      $S_{q-c}^{\mathrm{res}}(n) = -S_c^{\mathrm{res}}(n)$ (since $-1$ is a bijection on
+      $\mathbb{Z}/q\mathbb{Z}$ and $-S_c(\infty)=S_{q-c}(\infty)=S_c(\infty)$).
+      Hence $V^{(q-c)}_{\mathrm{res}}(n)=\overline{V^{(c)}_{\mathrm{res}}(n)}$.
+      The natural maximally entangled state on $V_{\mathrm{res}}\otimes\overline{V_{\mathrm{res}}}$
+      is $|\Omega^{\mathrm{res}}_n\rangle$ as stated.
+      Its Schmidt decomposition has $\rpair(n)$ terms with equal coefficients
+      $1/\sqrt{\rpair(n)}$, giving reduced state $\rpair(n)^{-1}\mathbf{1}_{\rpair(n)}$ and
+      $\Sent(n)=\log\rpair(n)$.
     \end{proof}
 
-    \begin{remark}[General blocks]
-      For general blocks with $(c_2,c_3)\neq(0,0)$, the two factor frequency sets are not
-      exact sign-reflections of each other.
-      However, Theorem~\ref{thm:main} ensures $w_j=1$ for every admission in both factors
-      independently.
-      The flat Schmidt spectrum for the full canonical pair observable~\cite{Beau2026a21,Beau2026ent}
-      then follows from the structural indistinguishability of conjugate blocks
-      established in \emph{O17}~\cite{Beau2026a21}: the two blocks produce the same sequence
-      of redundancy counts and therefore the same admitted Fourier modes (up to relabelling),
-      so the joint bipartite space is again $V\otimes\overline{V}$ with a flat Schmidt
-      spectrum.
+    \begin{remark}[General blocks and the scope of the result]
+      \label{rem:general}
+      For general independently sampled blocks $(c,c_2,c_3)$ and $(q-c,c_2',c_3')$ with
+      $(c_2,c_3)\neq(0,0)$ or $(c_2',c_3')\neq(c_2,c_3)$, the residual frequency sets
+      $S_c^{\mathrm{res}}(n)$ and $S_{q-c}^{\mathrm{res}}(n)$ are not in general sign-reflections
+      of each other, so $V^{(q-c)}_{\mathrm{res}}(n)\neq\overline{V^{(c)}_{\mathrm{res}}(n)}$
+      and the identification of Schmidt partners $\ue_A\leftrightarrow\ue_{-A}$ does not
+      follow automatically.
+      The \emph{O17} equal-count identity~\cite{Beau2026a21} guarantees
+      $\rpair(n)$ is the same for both factors (same residual dimension), but
+      does not fix the pairing of modes.
+      The flat Schmidt spectrum on the canonical pair observable~\cite{Beau2026ent}
+      therefore remains conditional on a canonical block-parameter identification for the
+      general case.
     \end{remark}
 
   \section{Epistemic status update for the companion paper}
