@@ -80,7 +80,7 @@ of Conjugate Pairs}
     The spectral admissibility cascade of the Cosmochrony programme operates through
     Gram--Schmidt projections of Weil fingerprint vectors on the Cayley graph
     $\Cay(\Heis_3(\mathbb{Z}/q\mathbb{Z}),S_q)$~\cite{Beau2026a15,Beau2026a16}.
-    The companion entanglement paper~\cite{Beau2026ent} established that the reduced entropy
+    The companion entanglement paper~\cite{Beau2026entnote} established that the reduced entropy
     of a closed conjugate Weil pair equals the logarithm of the residual fibre-level rank,
     \[
       \Sent(n) = \log \rpair(n),
@@ -124,7 +124,7 @@ of Conjugate Pairs}
     \end{equation}
     This is the formula implemented in the spectral pipeline (function
     \texttt{weil\_batch\_lut}, line 180 of \texttt{spectral\_O12.py}):
-    \texttt{arg}$[i,t]=(\gamma_i+b_i(t-a_i))\bmod q$, output $= \psi[{\rm arg}]/\sqrt{q}$
+    \texttt{arg}$[i,t]=(\gamma_i+b_i(t-a_i))\bmod q$, output $= \psi[{\mathrm arg}]/\sqrt{q}$
     with $\psi[r]=\exp(2\pi icr/q)$.
 
     A generic block is parametrised by $(c_1,c_2,c_3)\in(\mathbb{Z}/q\mathbb{Z})^3$.
@@ -273,7 +273,7 @@ of Conjugate Pairs}
 
     \begin{remark}[Numerical validation]
 Theorem~\ref{thm:main} explains the numerical observation of the companion
-paper~\cite{Beau2026ent}: $w_j=1.000\,000$ exactly for every admitted direction at
+paper~\cite{Beau2026entnote}: $w_j=1.000\,000$ exactly for every admitted direction at
 $q\in\{29,61,101,151\}$ and multiple generic blocks, with standard deviation zero.
 The agreement is exact (not merely approximate) because the orthogonality
 of Lemma~\ref{lem:ortho} holds exactly over $\mathbb{Z}/q\mathbb{Z}$.
@@ -373,7 +373,7 @@ counting identity, but the shellwise equality itself is imported from
         = \overline{V^{(c)}_{\mathrm{res}}(n)}.
       \end{align*}
       Here $\rpair(n)$ coincides with the residual rank of the companion
-      paper~\cite{Beau2026ent}: $\rpair(n)=R_\infty-R(n)$, which is non-increasing.
+      paper~\cite{Beau2026entnote}: $\rpair(n)=R_\infty-R(n)$, which is non-increasing.
       The residual bipartite fibre
       $K^{\mathrm{res}}_{c}(n) = V^{(c)}_{\mathrm{res}}(n)\otimes V^{(q-c)}_{\mathrm{res}}(n)$
       carries the maximally entangled state
@@ -414,7 +414,7 @@ counting identity, but the shellwise equality itself is imported from
       The \emph{O17} equal-count identity~\cite{Beau2026a21} guarantees
       $\rpair(n)$ is the same for both factors (same residual dimension), but
       does not fix the pairing of modes.
-      The flat Schmidt spectrum on the canonical pair observable~\cite{Beau2026ent}
+      The flat Schmidt spectrum on the canonical pair observable~\cite{Beau2026entnote}
       therefore remains conditional on a canonical block-parameter identification for the
       general case.
     \end{remark}
@@ -423,7 +423,7 @@ counting identity, but the shellwise equality itself is imported from
     \label{sec:status}
 
     Theorem~\ref{thm:main} and Theorem~\ref{thm:flat} resolve the two items listed as open
-    in the companion paper~\cite{Beau2026ent}:
+    in the companion paper~\cite{Beau2026entnote}:
 
     \begin{enumerate}
       \item \emph{Analytic proof of $w_j=1$ (previously numerical).}
