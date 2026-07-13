@@ -1,5 +1,5 @@
 This repository contains the source of the **Entanglement E1** Cosmochrony paper  
-[*Weil Fingerprint Orthogonality and the Flat Schmidt Spectrum of Conjugate Pairs*](out/EntanglementE1.pdf).
+*Weil Fingerprint Orthogonality and the Flat Schmidt Spectrum of Conjugate Pairs*.
 
 This paper closes the open analytic strengthening flagged by the entanglement
 sub-programme presentation note: it proves by explicit Fourier-mode computation
