@@ -54,16 +54,17 @@ entropy is exactly
 $$
 S_{\mathrm{ent}}(n) = \log r_{\mathrm{pair}}(n),
 $$
-derived analytically — not merely from the observed vanishing of an
-admissibility deficit.
+derived analytically, conditional on the companion note's supplied purity of
+the joint state — not merely from the observed vanishing of an admissibility
+deficit.
 
 ## Epistemic Status Update for the Companion Note
 
 | Companion-note claim | Previous status | New status |
 |---|---|---|
 | $w_j = 1$ for all admitted directions | Numerical ($q\in\{29,61,101,151\}$) | Proved (Theorem 1) |
-| Purity of the conjugate pair (matched blocks) | Structural hypothesis | Proved (Theorem 2) |
-| Diagonal Schmidt pairing $\hat e_A \leftrightarrow \hat e_{-A}$ | Selected by Born--Infeld parity | Derived from Fourier conjugation |
+| Purity of the conjugate pair | Structural hypothesis | Still supplied — not derived by Theorem 2 |
+| Diagonal Schmidt pairing $\hat e_A \leftrightarrow \hat e_{-A}$ (matched blocks) | Selected by Born--Infeld parity | Proved (Theorem 2), conditional on the supplied purity above |
 | Schmidt-partner pairing for independently sampled canonical O25 blocks | Standing assumption | Open — equal rank by O17 counting; literal pairing requires canonical block-parameter identification |
 
 ## Mechanism

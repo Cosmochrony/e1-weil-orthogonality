@@ -51,12 +51,14 @@ of Conjugate Pairs}
     Since distinct Fourier modes are orthogonal, any newly admitted fingerprint is already
     orthogonal to the current span, giving $w_j = \|w^{\mathrm{GS}}_j\|/\|v_j\| = 1$ exactly.
     For matched single-character blocks, the conjugate pair produces sign-reflected
-    frequency sets, so the paired Fourier supports are canonically identified and the
-    purity hypothesis of the companion paper is derived.
+    frequency sets, so the paired Fourier supports are canonically identified; conditional
+    on the companion paper's supplied purity of the joint state, this fixes the diagonal
+    Schmidt-partner pairing.
     For general canonical blocks, the equal-count identity is recovered, while the
     literal Schmidt pairing remains conditional on a canonical block identification.
-    Combined, these results prove analytically that the Schmidt spectrum of the closed
-    conjugate pair is flat on the residual support, and the reduced entropy is
+    Combined, these results prove analytically that, conditional on the companion paper's
+    supplied purity of the joint state, the Schmidt spectrum of the conjugate pair is flat
+    on the residual support for matched blocks, and the reduced entropy is
     $\Sent(n)=\log\rpair(n)$, where $\rpair(n)=R_\infty-R(n)$ is the residual rank.
   \end{abstract}
 
@@ -106,8 +108,9 @@ of Conjugate Pairs}
     and the $k{=}3$ fingerprint inherits a sign-reflection of the frequency index,
     $A_{q-c} = -A_c \pmod{q}$, for matched blocks.
     This shows that the two factor spans satisfy $V^{(q-c)}_n = \overline{V^{(c)}_n}$,
-    recovering the structural identity of~\cite{Beau2026a21} from the Fourier structure and
-    deriving the closure hypothesis of the companion paper.
+    recovering the structural identity of~\cite{Beau2026a21} from the Fourier structure;
+    conditional on the companion paper's supplied purity of the joint state, this fixes the
+    diagonal Schmidt-partner pairing of the closure hypothesis.
 
   \section{The \texorpdfstring{$k{=}3$}{k=3} Weil fingerprint formula}
     \label{sec:formula}
@@ -433,14 +436,22 @@ counting identity, but the shellwise equality itself is imported from
       The numerical evidence at $q\in\{29,61,101,151\}$ is an exact confirmation
       (not merely consistent with) this theorem.
 
-      \item \emph{Purity of the conjugate pair (previously a hypothesis).}
-      For matched blocks, Theorem~\ref{thm:flat} derives the joint maximally entangled
-      state $|\Omega_n\rangle$ on $V\otimes\overline{V}$ from the Fourier mode
-      structure and Proposition~\ref{prop:conjugate}.
-      The diagonal Schmidt pairing $\ue_A \leftrightarrow \ue_{-A}$ follows from the
-      conjugation identity $\rho_{q-c} = \overline{\rho_c}$ applied to the Fourier basis.
-      Hypothesis~1 of the companion paper (closure of the conjugate pair) is therefore
-      a theorem in the matched-block setting.
+      \item \emph{Schmidt-partner pairing of the conjugate pair (previously a hypothesis).}
+      Hypothesis~1 of the companion paper bundles two separate claims: that the joint
+      state on $K_c(n)$ is pure, and that its Schmidt vectors pair diagonally as
+      $\ue_A \leftrightarrow \ue_{-A}$.
+      Purity itself is not derived here: for matched blocks, Theorem~\ref{thm:flat}
+      exhibits the maximally entangled state $|\Omega_n\rangle$ on $V\otimes\overline{V}$
+      as the natural construction compatible with the Fourier mode structure and
+      Proposition~\ref{prop:conjugate}, without deriving purity from a more primitive
+      input.
+      What Theorem~\ref{thm:flat} does derive, conditional on that supplied purity, is
+      the diagonal Schmidt pairing: among purity-compatible pairings, the conjugation
+      identity $\rho_{q-c} = \overline{\rho_c}$ applied to the Fourier basis singles out
+      the diagonal one $\ue_A \leftrightarrow \ue_{-A}$.
+      Hypothesis~1's pairing clause is therefore a theorem in the matched-block setting;
+      its purity clause remains a supplied composition structure, as in the companion
+      paper.
     \end{enumerate}
 
     One item remains open: the extension of the matched-block purity argument to the
@@ -464,10 +475,11 @@ counting identity, but the shellwise equality itself is imported from
     prior admissions, because it carries a frequency not yet seen, and distinct Fourier
     frequencies are orthogonal.
 
-    For matched blocks, this implies that the conjugate pair $\{c,q-c\}$ is a closed
-    pure system whose Schmidt decomposition is flat.
-    The reduced entropy is $\Sent(n)=\log\rpair(n)$ analytically, not merely by the
-    observed vanishing of an admissibility deficit.
+    For matched blocks, conditional on the companion paper's supplied purity of the
+    joint state, this fixes the diagonal Schmidt pairing and shows the resulting
+    decomposition is flat.
+    The reduced entropy is $\Sent(n)=\log\rpair(n)$ analytically once that purity is
+    supplied, not merely by the observed vanishing of an admissibility deficit.
 
     The key formula is Lemma~\ref{lem:fourier}: the $k{=}3$ fingerprint factors as a
     global phase times a single Fourier mode.
