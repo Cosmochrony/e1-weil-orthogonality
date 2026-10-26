@@ -17,7 +17,7 @@ fibre-level rank governing entanglement.
 > Is the universal admission residual $w_j=1$ a numerical accident of the
 > tested range $q\in\{29,61,101,151\}$, or an exact algebraic identity?
 
-## Core Result (Theorem 1)
+## Core Result (Theorem 4)
 
 The $k=3$ Weil fingerprint of $\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})$ for any
 generic block $(c_1,c_2,c_3)$ factors as a global phase times a single discrete
@@ -35,7 +35,7 @@ $$
 The Gram--Schmidt process therefore produces an orthonormal subset of the
 Fourier basis of $\mathbb{C}^q$ and saturates at rank $q$.
 
-## Conjugate Pair Result (Theorem 2)
+## Conjugate Pair Result (Theorem 7)
 
 For matched single-character blocks $(c,0,0)$ and $(q-c,0,0)$, the conjugate
 pair $\{c, q-c\}$ samples sign-reflected frequencies:
@@ -62,9 +62,9 @@ deficit.
 
 | Companion-note claim | Previous status | New status |
 |---|---|---|
-| $w_j = 1$ for all admitted directions | Numerical ($q\in\{29,61,101,151\}$) | Proved (Theorem 1) |
-| Purity of the conjugate pair | Structural hypothesis | Still supplied — not derived by Theorem 2 |
-| Diagonal Schmidt pairing $\hat e_A \leftrightarrow \hat e_{-A}$ (matched blocks) | Selected by Born--Infeld parity | Proved (Theorem 2), conditional on the supplied purity above |
+| $w_j = 1$ for all admitted directions | Numerical ($q\in\{29,61,101,151\}$) | Proved (Theorem 4) |
+| Purity of the conjugate pair | Structural hypothesis | Still supplied — not derived by Theorem 7 |
+| Diagonal Schmidt pairing $\hat e_A \leftrightarrow \hat e_{-A}$ (matched blocks) | Selected by Born--Infeld parity | Proved (Theorem 7), conditional on the supplied purity above |
 | Schmidt-partner pairing for independently sampled canonical O25 blocks | Standing assumption | Open — equal rank by O17 counting; literal pairing requires canonical block-parameter identification |
 
 ## Mechanism
